@@ -23,6 +23,21 @@ class Form extends React.Component {
             });
         };
     }
+    
+    handleSubmit(e) {
+        e.preventDefault();
+        const user = new FormData();
+        user.append("user[first_name]", this.state.first_name);
+        user.append("user[last_name]", this.state.last_name);
+        user.append("user[address_1]", this.state.address_1);
+        user.append("user[address_2]", this.state.address_2);
+        user.append("user[city]", this.state.city);
+        user.append("user[state]", this.state.state);
+        user.append("user[zip]", this.state.zip);
+        user.append("user[country]", this.state.country);
+    
+        this.props.submitCommunity(community);
+    }
 
     render() {
         return (
@@ -64,8 +79,9 @@ class Form extends React.Component {
                     </div>
                     <div>
                         <label>Country</label>
-                        <input onChange={this.update('country')} type='text'></input>
-                        * (US only)
+                        <input name="country-radio" onChange={this.update('country')} type='radio' value="US" />US
+                        <input name="country-radio" onChange={this.update('country')} type='radio' value="Not US" />Not US
+                        * (Registration only open to US residents)
                     </div>
                     <button type="submit">Register Now!</button>
                 </form>
