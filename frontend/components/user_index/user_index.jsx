@@ -11,7 +11,7 @@ class UserIndex extends React.Component {
     }
 
     render() {
-        const users = Object.values(this.props.users);
+        const users = Object.values(this.props.users).reverse();
         return (
             <div>
                 <h3>User Index</h3>
@@ -40,7 +40,7 @@ class UserIndex extends React.Component {
                                     <td>{user.state}</td>
                                     <td>{user.zip}</td>
                                     <td>{user.country}</td>
-                                    <td>{user.created_at}</td>
+                                    <td>{user.created_at.split('T')[0]}</td>
                                 </tr>
                             )
                         })}

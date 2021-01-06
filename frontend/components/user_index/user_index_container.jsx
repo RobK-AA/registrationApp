@@ -12,4 +12,5 @@ const mapDispatchToProps = dispatch => {
         fetchUsers: () => dispatch(fetchUsers())
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(UserIndex);
