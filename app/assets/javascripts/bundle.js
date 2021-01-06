@@ -710,7 +710,6 @@ var UsersReducer = function UsersReducer() {
       return action.users;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER"]:
-      debugger;
       newState[action.user.id] = action.user;
       return newState;
 
