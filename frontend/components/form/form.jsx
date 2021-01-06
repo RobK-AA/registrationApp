@@ -14,6 +14,11 @@ class Form extends React.Component {
             country: "",
             errors: {}
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchUsers();
     }
 
     update(field) {
@@ -36,13 +41,13 @@ class Form extends React.Component {
         user.append("user[zip]", this.state.zip);
         user.append("user[country]", this.state.country);
     
-        this.props.submitCommunity(community);
+        this.props.createUser(user);
     }
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <label>First Name</label>
                         <input onChange={this.update('first_name')} type='text'></input>

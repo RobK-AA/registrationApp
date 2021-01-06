@@ -6,6 +6,11 @@ class UserIndex extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        debugger
+        this.props.fetchUsers();
+    }
+
     render() {
         return (
             <div>
