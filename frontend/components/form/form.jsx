@@ -41,7 +41,11 @@ class Form extends React.Component {
         user.append("user[zip]", this.state.zip);
         user.append("user[country]", this.state.country);
     
-        this.props.createUser(user);
+        this.props.createUser(user).then(
+            () => {
+                return this.props.history.push(`/confirmation`, this.state)
+            }
+        );
     }
 
     render() {

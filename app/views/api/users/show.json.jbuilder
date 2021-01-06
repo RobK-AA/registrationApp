@@ -1,0 +1,11 @@
+json.extract! @user, 
+    :id,
+    :first_name, 
+    :last_name, 
+    :address_1, 
+    :address_2, 
+    :city, 
+    :state, 
+    :zip, 
+    :country, 
+    :created_at

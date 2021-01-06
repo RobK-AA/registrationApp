@@ -13,7 +13,7 @@ class UserIndex extends React.Component {
     render() {
         return (
             <div>
-                <h3>User Index</h3>
+                <h3>New User Registered!</h3>
                 <button>
                     <Link to="/">
                         Back to form
