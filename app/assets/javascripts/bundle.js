@@ -169,7 +169,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _form_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form/form_container */ "./frontend/components/form/form_container.jsx");
 /* harmony import */ var _user_index_user_index_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user_index/user_index_container */ "./frontend/components/user_index/user_index_container.jsx");
-/* harmony import */ var _confirmation_confirmation_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./confirmation/confirmation_container */ "./frontend/components/confirmation/confirmation_container.jsx");
+/* harmony import */ var _confirmation_confirmation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./confirmation/confirmation */ "./frontend/components/confirmation/confirmation.jsx");
 
 
 
@@ -184,7 +184,7 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/confirmation",
-    component: _confirmation_confirmation_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _confirmation_confirmation__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
@@ -233,23 +233,18 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var UserIndex = /*#__PURE__*/function (_React$Component) {
-  _inherits(UserIndex, _React$Component);
+var Confirmation = /*#__PURE__*/function (_React$Component) {
+  _inherits(Confirmation, _React$Component);
 
-  var _super = _createSuper(UserIndex);
+  var _super = _createSuper(Confirmation);
 
-  function UserIndex(props) {
-    _classCallCheck(this, UserIndex);
+  function Confirmation(props) {
+    _classCallCheck(this, Confirmation);
 
     return _super.call(this, props);
   }
 
-  _createClass(UserIndex, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchUsers();
-    }
-  }, {
+  _createClass(Confirmation, [{
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -261,41 +256,10 @@ var UserIndex = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return UserIndex;
+  return Confirmation;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (UserIndex);
-
-/***/ }),
-
-/***/ "./frontend/components/confirmation/confirmation_container.jsx":
-/*!*********************************************************************!*\
-  !*** ./frontend/components/confirmation/confirmation_container.jsx ***!
-  \*********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _confirmation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./confirmation */ "./frontend/components/confirmation/confirmation.jsx");
-/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
-
-
-
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    createUser: function createUser(user) {
-      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["createUser"])(user));
-    },
-    fetchUsers: function fetchUsers() {
-      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUsers"])());
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_confirmation__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Confirmation);
 
 /***/ }),
 
@@ -364,11 +328,6 @@ var Form = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(Form, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchUsers();
-    }
-  }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
       this.setState({
@@ -554,9 +513,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     createUser: function createUser(user) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["createUser"])(user));
     },
-    fetchUsers: function fetchUsers() {
-      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUsers"])());
-    },
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["clearErrors"])());
     }
@@ -703,9 +659,6 @@ var mapStateToProps = function mapStateToProps(_ref) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    createUser: function createUser(user) {
-      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["createUser"])(user));
-    },
     fetchUsers: function fetchUsers() {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUsers"])());
     }

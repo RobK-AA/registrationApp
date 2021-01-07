@@ -18,10 +18,6 @@ class Form extends React.Component {
         this.highlightErrors = this.highlightErrors.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchUsers();
-    }
-
     componentWillReceiveProps(nextProps) {
         this.setState({ errors: nextProps.errors });
     }

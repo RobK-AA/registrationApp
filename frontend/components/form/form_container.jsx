@@ -11,8 +11,8 @@ const mapStateToProps = ({ errors }) => {
 const mapDispatchToProps = dispatch => {
     return {
         createUser: user => dispatch(createUser(user)),
-        fetchUsers: () => dispatch(fetchUsers()),
         clearErrors: () => dispatch(clearErrors())
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Form)

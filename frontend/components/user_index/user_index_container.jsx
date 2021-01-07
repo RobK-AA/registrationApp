@@ -8,7 +8,6 @@ const mapStateToProps = ({users}) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        createUser: user => dispatch(createUser(user)),
         fetchUsers: () => dispatch(fetchUsers())
     }
 }
