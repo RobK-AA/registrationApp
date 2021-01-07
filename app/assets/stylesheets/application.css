@@ -17,12 +17,23 @@
 .form-container {
     text-align: center;
 }
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
 
+body {
+    background-repeat: repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(https://www.merkleinc.com/sites/default/files/2019-02/PeopleBackground.jpg);
+}
 .form-container form{
     margin: 0 24% 0 24%;
-    border: 1px solid rgb(10, 10, 158);
+    border: 3px solid #f78d2d;
     border-radius: 1%;
     padding: 2%;
+    background-color: white;
 }
 
 .form-item {
@@ -85,12 +96,14 @@
 .form-container button, .confirmation-container button, .report-container button {
     margin-top: 5px;
     cursor: pointer;
-    background-color: yellowgreen;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background-color:  #f78d2d;
 }
 
 .confirmation-container, .report-container {
     text-align: center;
+    /* background-color: white; */
+    background-image: none;
 }
 
 .top-row {
@@ -100,4 +113,13 @@
 
 tr:nth-child(even) {
     background-color:rgb(190, 225, 236);
+    background-image: none;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+tbody {
+    background-color: white;
 }
