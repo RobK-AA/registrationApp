@@ -27,14 +27,14 @@
 
 .form-item {
     text-align: start;
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
     width: 85%;
     display: flex;
     justify-content: space-between;
 }
 
 .input-item {
-    margin-right: -19%;
+    margin-right: -15%;
     width: 80%;
 }
 
@@ -54,6 +54,7 @@
 
 .form-container p {
     text-align: center;
+    margin-top: -10px;
 }
 
 .country {
@@ -68,6 +69,6 @@
 
 .country-form-item {
     text-align: start;
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
     width: 85%;
 }
