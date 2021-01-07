@@ -92,3 +92,12 @@
 .confirmation-container, .report-container {
     text-align: center;
 }
+
+.top-row {
+    background-color: rgb(31, 134, 168);
+    font-family: Arial, Helvetica, sans-serif
+}
+
+tr:nth-child(even) {
+    background-color:rgb(190, 225, 236);
+}

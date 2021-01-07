@@ -18,7 +18,7 @@ class UserIndex extends React.Component {
                 <div>
                 <table style={{width:"100%"}}>
                     <tbody>
-                    <tr>
+                    <tr className="top-row">
                         <th>First name</th>
                         <th>Last name</th> 
                         <th>Address 1</th>
