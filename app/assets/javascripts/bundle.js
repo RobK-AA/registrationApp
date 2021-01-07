@@ -356,6 +356,7 @@ var Form = /*#__PURE__*/function (_React$Component) {
       errors: {}
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.highlightErrors = _this.highlightErrors.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -365,11 +366,20 @@ var Form = /*#__PURE__*/function (_React$Component) {
       this.props.fetchUsers();
     }
   }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+  }, {
     key: "update",
     value: function update(field) {
       var _this2 = this;
 
       return function (e) {
+        if (_this2.props.errors) _this2.props.clearErrors();
+
         _this2.setState(_defineProperty({}, field, e.currentTarget.value));
       };
     }
@@ -391,6 +401,35 @@ var Form = /*#__PURE__*/function (_React$Component) {
       this.props.createUser(user).then(function () {
         return _this3.props.history.push("/confirmation", _this3.state);
       });
+    }
+  }, {
+    key: "renderErrors",
+    value: function renderErrors() {
+      var _this4 = this;
+
+      this.highlightErrors();
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        id: "errors-list",
+        className: "rendered-errors-list"
+      }, Object.keys(this.state.errors).map(function (error, i) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "errors",
+          key: "error-".concat(i)
+        }, _this4.state.errors[error]);
+      }));
+    }
+  }, {
+    key: "highlightErrors",
+    value: function highlightErrors() {
+      if (Object.keys(this.state.errors).length > 0) {
+        $('.input-item').css('background-color', 'rgb(250, 233, 234)');
+        $('.country').css('background-color', 'rgb(250, 233, 234)');
+      } else {
+        $('.input-item').css('background-color', '');
+        $('.country').css('background-color', '');
+      }
+
+      ;
     }
   }, {
     key: "render",
@@ -469,9 +508,9 @@ var Form = /*#__PURE__*/function (_React$Component) {
         onChange: this.update('country'),
         type: "radio",
         value: "Not US"
-      }), "Not US")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "(Sorry, registration is currently only open to US residents)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), "Not US")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "(Sorry, registration is currently only open to US residents)"), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit"
-      }, "Register Now!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Registrant Preview"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "First Name:"), "__", this.state.first_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Last Name:"), "__", this.state.last_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Address 1:"), "__", this.state.address_1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Address 2:"), "__", this.state.address_2), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "City:"), "__", this.state.city), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "State:"), "__", this.state.state), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Zip Code:"), "__", this.state.zip), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Country:"), "__", this.state.country));
+      }, "Register Now!")));
     }
   }]);
 
@@ -498,6 +537,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var mapStateToProps = function mapStateToProps(_ref) {
+  var errors = _ref.errors;
+  return {
+    errors: errors
+  };
+};
+
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     createUser: function createUser(user) {
@@ -505,11 +551,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchUsers: function fetchUsers() {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUsers"])());
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["clearErrors"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_form__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_form__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 

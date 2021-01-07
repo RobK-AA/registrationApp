@@ -11,13 +11,13 @@ class User < ApplicationRecord
 
     def zip_code_must_be_five_or_nine_digits
         if zip.present? && (zip.length != 5 && zip.length != 9)
-            errors.add(:zip, "zip code must be 5 or 9 digits")
+            errors.add(:zip, "code must be 5 or 9 digits")
         end
     end
 
     def zip_code_must_contain_digits
         if zip.present? && (!zip.scan(/\D/).empty?)
-            errors.add(:zip, "zip code must only contain digits 0 - 9")
+            errors.add(:zip, "code must only contain digits 0 - 9")
         end
     end
 end

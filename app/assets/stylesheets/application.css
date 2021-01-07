@@ -72,3 +72,19 @@
     margin: 10px 0 10px 0;
     width: 85%;
 }
+
+.rendered-errors-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(190, 49, 49);
+    font-family: sans-serif;
+    font-size: small;
+}
+
+.form-container button {
+    margin-top: 5px;
+    cursor: pointer;
+    background-color: yellowgreen;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

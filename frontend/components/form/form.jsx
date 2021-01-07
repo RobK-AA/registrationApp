@@ -15,14 +15,20 @@ class Form extends React.Component {
             errors: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.highlightErrors = this.highlightErrors.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchUsers();
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({ errors: nextProps.errors });
+    }
+
     update(field) {
         return e => {
+            if (this.props.errors) this.props.clearErrors();
             this.setState({
                 [field]: e.currentTarget.value
             });
@@ -46,6 +52,30 @@ class Form extends React.Component {
                 return this.props.history.push(`/confirmation`, this.state)
             }
         );
+    }
+
+    renderErrors() {
+        this.highlightErrors();
+        return (
+            <ul id="errors-list" className="rendered-errors-list">
+                {Object.keys(this.state.errors).map((error, i) => (
+                <li className="errors" key={`error-${i}`}>
+                    {this.state.errors[error]}
+                </li>
+                ))}
+            </ul>
+        );
+    }
+
+    highlightErrors() {
+        if (Object.keys(this.state.errors).length > 0) {
+            $('.input-item').css('background-color', 'rgb(250, 233, 234)');
+            $('.country').css('background-color', 'rgb(250, 233, 234)');
+        }
+        else {
+            $('.input-item').css('background-color', '');
+            $('.country').css('background-color', '');
+        };
     }
 
     render() {
@@ -112,9 +142,10 @@ class Form extends React.Component {
                         </div>
                     </div>
                     <p>(Sorry, registration is currently only open to US residents)</p>
+                    {this.renderErrors()}
                     <button type="submit">Register Now!</button>
                 </form>
-                <h2>Registrant Preview</h2>
+                {/* <h2>Registrant Preview</h2>
                 <h4><label>First Name:</label>__
                     {this.state.first_name}</h4>
                 <h4><label>Last Name:</label>__
@@ -130,7 +161,7 @@ class Form extends React.Component {
                 <h4><label>Zip Code:</label>__
                     {this.state.zip}</h4>
                 <h4><label>Country:</label>__
-                    {this.state.country}</h4>
+                    {this.state.country}</h4> */}
             </div>
         )
     }
