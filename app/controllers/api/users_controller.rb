@@ -14,8 +14,6 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        @community = Community.with_attached_background_image.find(params[:id])
-        render "api/users/show"
     end
 
     private
