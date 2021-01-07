@@ -13,8 +13,8 @@ class UserIndex extends React.Component {
     render() {
         const users = Object.values(this.props.users).reverse();
         return (
-            <div>
-                <h3>User Index</h3>
+            <div className="report-container">
+                <h1>Registered User Report</h1>
                 <div>
                 <table style={{width:"100%"}}>
                     <tbody>

@@ -82,9 +82,13 @@
     font-size: small;
 }
 
-.form-container button {
+.form-container button, .confirmation-container button, .report-container button {
     margin-top: 5px;
     cursor: pointer;
     background-color: yellowgreen;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.confirmation-container, .report-container {
+    text-align: center;
 }

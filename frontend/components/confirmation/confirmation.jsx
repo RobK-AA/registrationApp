@@ -12,8 +12,8 @@ class UserIndex extends React.Component {
 
     render() {
         return (
-            <div>
-                <h3>New User Registered!</h3>
+            <div className="confirmation-container">
+                <h2>New User Registered!</h2>
                 <button>
                     <Link to="/">
                         Back to form
