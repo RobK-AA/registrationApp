@@ -31,7 +31,7 @@ class UserIndex extends React.Component {
                     </tr>
                         {users.map((user) => {
                             return (
-                                <tr>
+                                <tr key={user.id}>
                                     <td>{user.first_name}</td>
                                     <td>{user.last_name}</td>
                                     <td>{user.address_1}</td>
