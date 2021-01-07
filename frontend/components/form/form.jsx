@@ -51,59 +51,67 @@ class Form extends React.Component {
     render() {
         const states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
         return (
-            <div>
+            <div className="form-container">
                 <h1>Register Here!</h1>
                 <p>* = required field</p>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label>First Name</label>
-                        <input onChange={this.update('first_name')} type='text'></input>
-                        *
-                    </div>
-                    <div>
-                        <label>Last Name</label>
-                        <input onChange={this.update('last_name')} type='text'></input>
-                        *
-                    </div>
-                    <div>
-                        <label>Address 1</label>
-                        <input onChange={this.update('address_1')} type='text'></input>
-                        *
-                    </div>
-                    <div>
-                        <label>Address 2</label>
-                        <input onChange={this.update('address_2')} type='text'></input>
-                    </div>
-                    <div>
-                        <label>City</label>
-                        <input onChange={this.update('city')} type='text'></input>
-                        *
-                    </div>
-                    <div>
-                        <label>State</label>
-                        <div className="custom-select" style={{width: "200px"}}>
-                            <select onChange={this.update('state')}>
-                                <option value="">Select a State or Territory</option>
-                                {states.map((state) => {
-                                    return (
-                                        <option key={state} value={state}>{state}</option>
-                                    )
-                                })}
-                            </select>
+                    <div className="form-item">
+                        <label>First Name*</label>
+                        <div className="input-item">
+                            <input onChange={this.update('first_name')} type='text'></input>
                         </div>
-                        *
                     </div>
-                    <div>
-                        <label>Zip Code</label>
-                        <input onChange={this.update('zip')} type='text'></input>
-                        *
+                    <div className="form-item">
+                        <label>Last Name*</label>
+                        <div className="input-item">
+                            <input onChange={this.update('last_name')} type='text'></input>
+                        </div>
                     </div>
-                    <div>
-                        <label>Country</label>
-                        <input name="country-radio" onChange={this.update('country')} type='radio' value="US" />US
-                        <input name="country-radio" onChange={this.update('country')} type='radio' value="Not US" />Not US
-                        * (Registration only open to US residents)
+                    <div className="form-item">
+                        <label>Address 1*</label>
+                        <div className="input-item">
+                            <input onChange={this.update('address_1')} type='text'></input>
+                        </div>
                     </div>
+                    <div className="form-item">
+                        <label>Address 2</label>
+                        <div className="input-item">
+                            <input onChange={this.update('address_2')} type='text'></input>
+                        </div>
+                    </div>
+                    <div className="form-item">
+                        <label>City*</label>
+                        <div className="input-item">
+                            <input onChange={this.update('city')} type='text'></input>
+                        </div>
+                    </div>
+                    <div className="form-item">
+                        <label>State*</label>
+                            <div className="input-item">
+                                <select onChange={this.update('state')}>
+                                    <option value="">Select a State or Territory</option>
+                                    {states.map((state) => {
+                                        return (
+                                            <option key={state} value={state}>{state}</option>
+                                        )
+                                    })}
+                                </select>
+                            </div>
+                    </div>
+                    <div className="form-item">
+                        <label>Zip Code*</label>
+                        <div className="input-item">
+                            <input onChange={this.update('zip')} type='text'></input>
+                        </div>
+                    </div>
+                    <div className="country-form-item">
+                        <label>Country*</label>
+                        <div className="country">
+                            <input name="country-radio" onChange={this.update('country')} type='radio' value="US" />US
+                            <input name="country-radio" onChange={this.update('country')} type='radio' value="Not US" />Not US
+                        </div>
+                    </div>
+                    <p>(Sorry, registration is currently only open to US residents)</p>
                     <button type="submit">Register Now!</button>
                 </form>
                 <h2>Registrant Preview</h2>
