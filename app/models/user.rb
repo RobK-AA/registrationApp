@@ -7,7 +7,8 @@ class User < ApplicationRecord
     validates :zip, presence: true
     validate :zip_code_must_be_five_or_nine_digits
     validate :zip_code_must_contain_digits
-    validates :country, presence: true, inclusion: { in: ["US"]  }
+    validate :country_must_be_US
+    validates :country, presence: true
 
     def zip_code_must_be_five_or_nine_digits
         if zip.present? && (zip.length != 5 && zip.length != 9)
@@ -18,6 +19,12 @@ class User < ApplicationRecord
     def zip_code_must_contain_digits
         if zip.present? && (!zip.scan(/\D/).empty?)
             errors.add(:zip, "code must only contain digits 0 - 9")
+        end
+    end
+
+    def country_must_be_US
+        if country.present? && (country != "US")
+            errors.add(:country, "not US. Registration requires US address")
         end
     end
 end

@@ -510,7 +510,7 @@ var Form = /*#__PURE__*/function (_React$Component) {
         onChange: this.update('country'),
         type: "radio",
         value: "Not US"
-      }), "Not US")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "(Sorry, registration is currently only open to US residents)"), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), "Not US")), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit"
       }, "Register Now!")));
     }

@@ -141,7 +141,6 @@ class Form extends React.Component {
                             <input name="country-radio" onChange={this.update('country')} type='radio' value="Not US" />Not US
                         </div>
                     </div>
-                    <p>(Sorry, registration is currently only open to US residents)</p>
                     {this.renderErrors()}
                     <button type="submit">Register Now!</button>
                 </form>
