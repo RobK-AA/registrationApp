@@ -89,7 +89,7 @@ body {
     margin: 0;
     padding: 0;
     color: rgb(190, 49, 49);
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: small;
 }
 
@@ -100,9 +100,12 @@ body {
     background-color:  #f78d2d;
 }
 
+button:hover {
+    text-decoration: underline;
+}
+
 .confirmation-container, .report-container {
     text-align: center;
-    /* background-color: white; */
     background-image: none;
 }
 
@@ -122,4 +125,17 @@ table, th, td {
 
 tbody {
     background-color: white;
+}
+
+tr:first {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.required-field {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.form-link {
+    text-decoration: none;
 }

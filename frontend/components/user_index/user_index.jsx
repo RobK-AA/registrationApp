@@ -48,7 +48,7 @@ class UserIndex extends React.Component {
                 </table>
                 </div>
                 <button>
-                    <Link to="/">
+                    <Link className="form-link" to="/">
                         Back to form
                     </Link>
                 </button>

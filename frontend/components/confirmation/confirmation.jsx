@@ -15,7 +15,7 @@ class UserIndex extends React.Component {
             <div className="confirmation-container">
                 <h2>New User Registered!</h2>
                 <button>
-                    <Link to="/">
+                    <Link className="form-link" to="/">
                         Back to form
                     </Link>
                 </button>

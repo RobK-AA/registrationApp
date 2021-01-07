@@ -83,7 +83,7 @@ class Form extends React.Component {
         return (
             <div className="form-container">
                 <h1>Register Here!</h1>
-                <p>* = required field</p>
+                <p className="required-field">* = required field</p>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-item">
                         <label>First Name*</label>
