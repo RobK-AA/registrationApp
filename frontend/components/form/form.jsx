@@ -75,7 +75,7 @@ class Form extends React.Component {
     }
 
     render() {
-        const states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
+        const states = ['AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY'];
         return (
             <div className="form-container">
                 <h1>Register Here!</h1>
@@ -140,23 +140,6 @@ class Form extends React.Component {
                     {this.renderErrors()}
                     <button type="submit">Register Now!</button>
                 </form>
-                {/* <h2>Registrant Preview</h2>
-                <h4><label>First Name:</label>__
-                    {this.state.first_name}</h4>
-                <h4><label>Last Name:</label>__
-                    {this.state.last_name}</h4>
-                <h4><label>Address 1:</label>__
-                    {this.state.address_1}</h4>
-                <h4><label>Address 2:</label>__
-                    {this.state.address_2}</h4>
-                <h4><label>City:</label>__
-                    {this.state.city}</h4>
-                <h4><label>State:</label>__
-                    {this.state.state}</h4>
-                <h4><label>Zip Code:</label>__
-                    {this.state.zip}</h4>
-                <h4><label>Country:</label>__
-                    {this.state.country}</h4> */}
             </div>
         )
     }
